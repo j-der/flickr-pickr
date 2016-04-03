@@ -1,0 +1,17 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import MainPage from './components/MainPage'
+
+ReactDOM.render(
+  <Router history={browserHistory}>
+    <Route path='/' component={App}>
+      <IndexRoute component={MainPage}/>
+
+    </Route>
+  </Router>,
+document.getElementById('root'));
+
+
+
