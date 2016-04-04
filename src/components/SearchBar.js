@@ -11,15 +11,14 @@ export default class SearchBar extends Component {
     event.preventDefault()
   }
 
-
-  handleSearchChange = (event) => {
+  handleChange = (event) => {
     this.setState({Search: event.target.value})
   }
 
   render() {
     return(
       <div>
-        <input type="text" placeholder="Search for..." onChange={this.state.handleSearchChange} />
+        <input type="text" value={this.state.value} placeholder="Search for..." onChange={this.handleChange} onSubmit={this.state.searchSubmit} />
       </div>
     )
   }
