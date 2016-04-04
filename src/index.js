@@ -6,12 +6,12 @@ import MainPage from './components/MainPage'
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={MainPage}/>
+    <Route path = '/' component={App}>
+    <Route path = '/main' component={MainPage}/>
 
     </Route>
   </Router>,
-document.getElementById('root'));
+document.getElementById('root'))
 
 
 

@@ -1,5 +1,7 @@
 import React, { Component, Children, cloneElement } from 'react'
+import { Link } from 'react-router'
 import MainPage from './components/MainPage'
+import SearchBar from './components/SearchBar'
 
 export default class App extends Component {
 
@@ -14,9 +16,12 @@ export default class App extends Component {
 
     return (
       <div className="container">
+        <h1>Welcome to flickr pickr!</h1>
+
         {children}
       </div>
     )
   }
 }
 
+// <p>Click <Link to='main'>here</Link> to for MainPage component</p>
