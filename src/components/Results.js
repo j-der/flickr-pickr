@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Results extends Component
+const Results = (props) => {
+  return (
+    <ul>
+      {props.photos.length}
+    </ul>
+  )
+}
 
-  render() {
-    return (
-
-    )
-  }
+export default Results
