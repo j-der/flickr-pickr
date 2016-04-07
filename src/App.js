@@ -13,6 +13,9 @@ constructor(props) {
 }
 
  handleSubmit = (event) => {
+
+    console.log("here")
+
     let apiKey = "e301b1792cb18509d3b3c843227991d2"
     let searchTerm = this.refs.keyword.value
     let numResults = 10
@@ -36,10 +39,19 @@ constructor(props) {
       })
 
     event.preventDefault()
+
   }
 
-
   render() {
+    let children = Children.map(this.props.children, child => {
+      return cloneElement(child, {
+        ...child.props,
+        ...this.props,
+        ...this.state,
+        handleSubmit: this.handleSubmit
+      })
+    })
+
     return (
       <div className="container">
         <h1>Welcome to flickr pickr!</h1>
@@ -50,12 +62,6 @@ constructor(props) {
   }
 }
 
-// let children = Children.map(this.props.children, child => {
-//       return cloneElement(child, {
-//         ...child.props,
-//         ...this.props,
-//         ...this.state
-//       })
-//     })
+
 
 // <p>Click <Link to='main'>here</Link> to for MainPage component</p>

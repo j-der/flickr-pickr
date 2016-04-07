@@ -42,7 +42,7 @@ export default class SearchBar extends Component {
     return(
       <div>
         <div className="form-group">
-          <form onSubmit={this.handleSubmit} className="form-horizontal">
+          <form onSubmit={event => this.handleSubmit} className="form-horizontal">
             <div className="col-lg-10">
               <input type="text"
                        value={this.state.value}
