@@ -31,7 +31,7 @@ constructor(props) {
           let farmId = photoArray[i]["farm"]
 
           let imgSrc = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`
-          return imgSrc
+          console.log(imgSrc)
         }
       })
 
