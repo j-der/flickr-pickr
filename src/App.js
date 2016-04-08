@@ -13,31 +13,17 @@ constructor(props) {
 }
 
  handleSubmit = (event, term) => {
+  let apiKey = "e301b1792cb18509d3b3c843227991d2"
+  let searchTerm = term
+  let numResults = 10
+  let numPages = 1
+  let flickrUrl = `https://api.flickr.com/services/rest/?api_key=${apiKey}&method=flickr.photos.search&format=json&nojsoncallback=1&&per_page=${numResults}&page=${numPages}&text=${searchTerm}`
 
-    let apiKey = "e301b1792cb18509d3b3c843227991d2"
-    let searchTerm = term
-    let numResults = 10
-    let numPages = 1
-
-
-
-    let flickrUrl = `https://api.flickr.com/services/rest/?api_key=${apiKey}&method=flickr.photos.search&format=json&nojsoncallback=1&&per_page=${numResults}&page=${numPages}&text=${searchTerm}`
-
-    $.getJSON(flickrUrl, {
-      api_key: apiKey,
-      tags: searchTerm,
-      per_page: numResults,
-      page: numPages,
-      // format: "json"
-    }).success((data) => {
-      this.setState({photos: data.photos.photo})
-      console.log(searchTerm)
-        console.log(flickrUrl)
-        console.log(data)
-
-    }).error((err) => {
-        console.log(err)
-        console.log("error happened, yo")
+  fetch(flickrUrl)
+    .then(res => res.json())
+    .then(data => {
+      let photoArray = data["photos"]["photo"]
+      console.log(photoArray)
       })
 
     event.preventDefault()
