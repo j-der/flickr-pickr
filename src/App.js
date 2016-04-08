@@ -23,7 +23,16 @@ constructor(props) {
     .then(res => res.json())
     .then(data => {
       let photoArray = data["photos"]["photo"]
-      console.log(photoArray)
+
+        for (var i = 0; i < photoArray.length; i++) {
+          let id = photoArray[i]["id"]
+          let secret = photoArray[i]["secret"]
+          let serverId = photoArray[i]["server"]
+          let farmId = photoArray[i]["farm"]
+
+          let imgSrc = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}.jpg`
+          return imgSrc
+        }
       })
 
     event.preventDefault()
