@@ -1,18 +1,14 @@
-// import React from 'react'
+import React from 'react'
 
-// export default class PhotoResultsItem extends Component {
+const PhotoResultsItem = ({photo}) => {
 
-//   constructor(props) {
-//     super(props)
-//   }
+console.log(photo)
 
-// var photoUrl = {
-//   imageUrlFromPhoto : function(photo, size){
-//     return `http://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`;
-//   }
-// }
+  return(
+    <div className="photo-item">
+        <img src={photo.src} />
+    </div>
+  )
+}
 
-
-
-
-// };
+export default PhotoResultsItem
