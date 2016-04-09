@@ -2,11 +2,10 @@ import React from 'react'
 
 const PhotoResultsItem = ({photo}) => {
 
-console.log(photo)
-
+  const src = photo.props.thumbUrl
   return(
     <div className="photo-item">
-        <img src={photo.src} />
+      <img src={src}/>
     </div>
   )
 }
