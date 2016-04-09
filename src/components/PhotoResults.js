@@ -9,15 +9,14 @@ import PhotoResultsItem from './PhotoResultsItem'
       let server = photo.server
       let farm = photo.farm
       let thumbSuffix = "_q"
-      let imgSrc = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
-      let thumbUrl = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}${thumbSuffix}.jpg`
 
+console.log(photo)
       return (
         <PhotoResultsItem
-        photo={photo}
-        key={photo.id}
-        imgUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
-        thumbUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}${thumbSuffix}.jpg`}/>
+          photo={photo}
+          key={photo.id}
+          imgUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
+          thumbUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}${thumbSuffix}.jpg`}/>
       )
     })
 
@@ -31,7 +30,7 @@ import PhotoResultsItem from './PhotoResultsItem'
       <div>
         {photoItems}
       </div>
-      )
+    )
   }
 
 export default PhotoResults

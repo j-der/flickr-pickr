@@ -38,9 +38,11 @@ handleGetPhotos(photos) {
   render() {
     return (
       <div className="container">
-        <h1>Welcome to flickr pickr!</h1>
-        <SearchBar handleSubmit={this.handleSubmit} />
-        <PhotoResults data={this.state.photos} />
+        <div className="col-lg-12">
+          <h1>Welcome to flickr pickr!</h1>
+          <SearchBar handleSubmit={this.handleSubmit} />
+          <PhotoResults data={this.state.photos} />
+        </div>
       </div>
     )
   }

@@ -2,11 +2,21 @@ import React from 'react'
 
 const PhotoResultsItem = ({photo}) => {
 
-  const src = photo.props.thumbUrl
+  const thumbSrc = photo.props.thumbUrl
+  const fullSrc = photo.props.imgUrl
+  const title = photo.props.id
   return(
-    <div className="photo-item">
-      <img src={src}/>
+    <div className="col-lg-3">
+      <div className="panel panel-primary">
+        <div className="panel-heading">{title}</div>
+          <div className="panel-body">
+            <a href={fullSrc} target="_blank">
+              <img src={thumbSrc}/>
+            </a>
+          </div>
+      </div>
     </div>
+
   )
 }
 
