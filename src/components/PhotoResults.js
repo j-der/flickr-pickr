@@ -9,14 +9,15 @@ import PhotoResultsItem from './PhotoResultsItem'
       let server = photo.server
       let farm = photo.farm
       let thumbSuffix = "_q"
+      let title = photo.title
 
-console.log(photo)
       return (
         <PhotoResultsItem
           photo={photo}
           key={photo.id}
           imgUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`}
-          thumbUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}${thumbSuffix}.jpg`}/>
+          thumbUrl={`https://farm${farm}.staticflickr.com/${server}/${id}_${secret}${thumbSuffix}.jpg`}
+          title={title} />
       )
     })
 
@@ -25,6 +26,18 @@ console.log(photo)
           <PhotoResultsItem photo={pic} key={pic.key} src={pic.thumbUrl}/>
         )
       })
+
+  const sortDesc = (photos) => {
+    photos.sort(function(a, b) {
+      return b.datetaken > a.datetaken
+    })
+  }
+
+  const sortAsc = (photos) => {
+    photos.sort(function(a, b) {
+      return b.datetaken < a.datetaken
+    })
+  }
 
     return (
       <div>
